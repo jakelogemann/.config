@@ -1,0 +1,90 @@
+# Disable specific steps - same options as the command line flag
+disable = ["vim", "emacs","tmux", "flatpak"]
+# Don't prompt for confirmation (since it requires sudo anyhow).
+assume_yes = true
+# Do not ask to retry failed steps (default: false)
+no_retry = true
+# use libnotify to emit desktop notifications on progress.
+notify_each_step = true
+# set the terminal title to the current step being executed.
+set_title = true
+# Cleanup temporary or old files
+cleanup = true
+# Run inside tmux
+run_in_tmux = false
+# Ignore failures for these steps
+#ignore_failures = ["powershell"]
+# Run specific steps - same options as the command line flag
+#only = ["system", "emacs"]
+# Path to Topgrade executable on remote machines
+#remote_topgrade_path = ".cargo/bin/topgrade"
+# Arguments to pass tmux when pulling Repositories
+#tmux_arguments = "-S /var/tmux.sock"
+# Cleanup temporary or old files
+#cleanup = true
+# Arguments to pass tmux when pulling Repositories
+#tmux_arguments = "-S /var/tmux.sock"
+
+[git]
+#max_concurrency = 5
+# Don't pull the predefined git repos
+pull_predefined = false
+# Additional git repositories to pull
+repos = ["~/dotfiles" , "~/terraform", "~/.config/nvim" ]
+# Arguments to pass Git when pulling Repositories
+arguments = "--rebase --autostash --ff-only"
+
+[composer]
+#self_update = true
+
+# Commands to run before anything
+[pre_commands]
+#"Emacs Snapshot" = "rm -rf ~/.emacs.d/elpa.bak && cp -rl ~/.emacs.d/elpa ~/.emacs.d/elpa.bak"
+
+
+# Custom commands
+[commands]
+"Enumerate Binaries (Rust)" = "ls -C ~/.cargo/bin"
+"Enumerate Binaries (Go)" 	= "ls -C ${GOPATH:-$HOME/go}/bin"
+"Kernel Information" 			  = "uname -a"
+# "Cleanup Downloads" = "rm -vrf ~/Downloads/*"
+# "Prune Dangling Symlinks" = "find -L ~/ -type l -exec rm -fv {} \\; 2>/dev/null"
+
+
+[brew]
+#greedy_cask = true
+
+[linux]
+# Arch Package Manager to use. Allowed values: autodetect, trizen, paru, yay, pacman.
+#arch_package_manager = "pacman"
+# Arguments to pass yay (or paru) when updating packages
+#yay_arguments = "--nodevel"
+#show_arch_news = true
+#trizen_arguments = "--devel"
+#enable_tlmgr = true
+#emerge_sync_flags = "-q"
+#emerge_update_flags = "-uDNa --with-bdeps=y world"
+#redhat_distro_sync = false
+#rpm_ostree = false
+
+[windows]
+# Manually select Windows updates
+#accept_all_updates = false
+#open_remotes_in_new_terminal = true
+
+# Causes Topgrade to rename itself during the run to allow package managers
+# to upgrade it. Use this only if you installed Topgrade by using a package
+# manager such as Scoop to Cargo
+#self_rename = true
+
+[npm]
+# Use sudo if the NPM directory isn't owned by the current user
+#use_sudo = true
+
+[firmware]
+# Offer to update firmware; if false just check for and display available updates
+upgrade = true
+
+[flatpak]
+# Use sudo for updating the system-wide installation
+#use_sudo = true

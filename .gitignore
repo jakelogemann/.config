@@ -1,0 +1,24 @@
+/*
+# ^^ By default, everything at the top-level of this directory is ignored by git
+# (meaning it wont be saved), We need to enable the files/directories in the
+# ~/.config dir that we want to keep.
+!/.github
+!/.gitignore
+!/README.md
+!/alacritty
+!/aliases.ini
+!/bash
+!/bspwm
+!/git
+!/gitui/theme.ron
+!/helix/config.toml
+!/lvim
+!/mimeapps.list
+!/nvim
+!/ranger
+!/starship.toml
+!/topgrade.toml
+!/vim
+!/tmux
+!/wireshark
+!/zsh

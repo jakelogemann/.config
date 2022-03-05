@@ -1,0 +1,1 @@
+/Users/jlogemann/Projects/my/ranger/commands_full.py

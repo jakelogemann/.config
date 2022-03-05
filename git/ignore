@@ -1,0 +1,7 @@
+tags
+*.swo
+*.swp
+*.log
+.nvimlog
+.DS_Store
+*.icloud

@@ -1,0 +1,13 @@
+; User's Git Configuration
+; vim: ft=dosini
+[pull]
+  ff = true
+  rebase = true
+[alias]
+  amend = commit --amend --no-edit
+  amendit = commit --amend --edit
+  amendall = commit --all --amend --edit
+  quick-rebase = rebase --interactive --root --autosquash --autostash
+  force-push = push --force-with-lease
+[commit]
+  gpgSign = false
